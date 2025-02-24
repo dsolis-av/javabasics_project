@@ -1,3 +1,5 @@
+package people;
+
 public class PartTimeTeacher extends Teacher {
     private double baseSalary;
 

@@ -1,4 +1,6 @@
-import java.util.Random;
+package people;
+import utils.Utils;
+
 
 public abstract class Teacher extends Person {
     private double salary;
@@ -7,8 +9,7 @@ public abstract class Teacher extends Person {
 
     public Teacher(String name, int yearsOfExperience, int weeklyHours) {
         setName(name);
-        Random rand = new Random();
-        setId(rand.nextInt(1000));
+        setId(Utils.rand.nextInt());
         this.yearsOfExperience = yearsOfExperience;
         this.weeklyHours = weeklyHours;
     }

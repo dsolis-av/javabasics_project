@@ -1,3 +1,7 @@
+package people;
+
+import utils.Utils;
+
 import java.util.Random;
 
 public class Student extends Person {
@@ -6,8 +10,7 @@ public class Student extends Person {
     public Student(String name, int age) {
         this.age = age;
         setName(name);
-        Random rand = new Random();
-        setId(rand.nextInt(1000));
+        setId(Utils.rand.nextInt());
     }
 
 
