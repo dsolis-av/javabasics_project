@@ -1,22 +1,18 @@
-public abstract class Teacher {
-    private String name;
+import java.util.Random;
+
+public abstract class Teacher extends Person {
     private double salary;
     private int yearsOfExperience;
     private int weeklyHours;
 
     public Teacher(String name, int yearsOfExperience, int weeklyHours) {
-        this.name = name;
+        setName(name);
+        Random rand = new Random();
+        setId(rand.nextInt(1000));
         this.yearsOfExperience = yearsOfExperience;
         this.weeklyHours = weeklyHours;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
 
     public double getSalary() {
         return salary;
