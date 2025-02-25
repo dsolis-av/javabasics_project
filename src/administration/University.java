@@ -65,6 +65,15 @@ public class University {
         return null;
     }
 
+    public Teacher findTeacherById(int id){
+        for(int i = 0; i < this.teachers.size(); i++){
+            if(this.teachers.get(i).getId() == id){
+                return this.teachers.get(i);
+            }
+        }
+        return null;
+    }
+
     public void addStudent(Student student){
         this.students.add(student);
     }
@@ -92,5 +101,18 @@ public class University {
         for(Student student: this.students){
             student.printStudentDetails();
         }
+    }
+
+    public ArrayList<Student> findStudentsById(int[] studentIds){
+        ArrayList<Student> foundStudents = new ArrayList<>();
+        for(int i = 0; i < studentIds.length; i++){
+            int currentId = studentIds[i];
+            for(Student student: this.students){
+                if(currentId == student.getId()){
+                    foundStudents.add(student);
+                }
+            }
+        }
+        return foundStudents;
     }
 }

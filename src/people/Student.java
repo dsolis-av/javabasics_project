@@ -23,6 +23,6 @@ public class Student extends Person {
     }
 
     public void printStudentDetails(){
-        System.out.println("ID: " + getId() + "\nName: " + getName() + "\nAge: " + getAge() + "\n");
+        System.out.println("Student ID: " + getId() + "\nName: " + getName() + "\nAge: " + getAge() + "\n");
     }
 }

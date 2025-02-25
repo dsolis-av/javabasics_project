@@ -66,7 +66,7 @@ public class CollegeClass {
     }
 
     public void printClassPartialDetails() {
-        System.out.println("ID: " + getId() + "\nClassname: " + getClassName() + "\nClassroom: " + getClassRoom() + "\nTeacher: " + this.teacher.getName());
+        System.out.println("ID: " + getId() + "\nClass name: " + getClassName() + "\nClassroom: " + getClassRoom() + "\nTeacher: " + this.teacher.getName());
         System.out.println("Student names:");
         for(int i = 0; i < this.students.size(); i++){
             System.out.println(this.students.get(i).getName());
@@ -75,9 +75,11 @@ public class CollegeClass {
     }
 
     public void printClassDetails(){
-        System.out.println("ID: " + getId() + "\nClassname: " + getClassName() + "\nClassroom: " + getClassRoom() + "\nTeacher: " + this.teacher.getName());
+        System.out.println("Class ID: " + getId() + "\nClass name: " + getClassName() + "\nClassroom: " + getClassRoom() + "\n");
+        System.out.println("Teacher:");
+        this.teacher.printTeacherDetails();
+        System.out.println("Students:");
         for(int i = 0; i < this.students.size(); i++){
-            System.out.println("Students:");
             this.students.get(i).printStudentDetails();
         }
     }

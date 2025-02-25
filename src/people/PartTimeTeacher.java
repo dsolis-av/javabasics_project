@@ -16,6 +16,8 @@ public class PartTimeTeacher extends Teacher {
 
     public void calculateSalary(){
         double realSalary = getBaseSalary()*1.1;
+        //the following line rounds the real salary to three decimal points
+        realSalary = Math.round(realSalary * 1000.0) / 1000.0;
         setSalary(realSalary);
     }
 }

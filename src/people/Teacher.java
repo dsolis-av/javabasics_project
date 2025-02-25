@@ -40,7 +40,7 @@ public abstract class Teacher extends Person {
     }
 
     public void printTeacherDetails(){
-        System.out.println("ID: " + getId() + "\nName: " + getName() + "\nSalary: " + getSalary() + "\nYears of Experience: " + getYearsOfExperience() + "\nWeekly hours: " + getWeeklyHours() + "\n");
+        System.out.println("Teacher ID: " + getId() + "\nName: " + getName() + "\nSalary: " + getSalary() + "\nYears of Experience: " + getYearsOfExperience() + "\nWeekly hours: " + getWeeklyHours() + "\n");
     }
 
     public abstract void calculateSalary();
