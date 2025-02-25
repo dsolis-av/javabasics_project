@@ -66,6 +66,7 @@ public class CollegeClass {
     }
 
     public void printClassPartialDetails() {
+        //method to print the class details with partial details about the teacher and the students
         System.out.println("ID: " + getId() + "\nClass name: " + getClassName() + "\nClassroom: " + getClassRoom() + "\nTeacher: " + this.teacher.getName());
         System.out.println("Student names:");
         for(int i = 0; i < this.students.size(); i++){
@@ -75,6 +76,7 @@ public class CollegeClass {
     }
 
     public void printClassDetails(){
+        //method to print the class details with complete details about the teacher and the students
         System.out.println("Class ID: " + getId() + "\nClass name: " + getClassName() + "\nClassroom: " + getClassRoom() + "\n");
         System.out.println("Teacher:");
         this.teacher.printTeacherDetails();

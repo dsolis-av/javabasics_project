@@ -1,6 +1,7 @@
 package people;
 
 public abstract class Person {
+    //here we declare the abstract class of a Person. The reason for it is that every person will have an id and a name, so we save code by defining an abstract class with this properties
     private int id;
     private String name;
 

@@ -10,6 +10,7 @@ public class Student extends Person {
     public Student(String name, int age) {
         this.age = age;
         setName(name);
+        //we set the id automatically as a random number between 0 and 999
         setId(Utils.rand.nextInt(1000));
     }
 

@@ -1,55 +1,25 @@
-import people.FullTimeTeacher;
-import people.*;
-import administration.*;
-import java.util.Arrays;
+package ui;
+
+import administration.CollegeClass;
+import administration.University;
+import people.Teacher;
+import people.Student;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+public class UniversityUI {
+    private University university;
+    private Scanner scanner;
 
-public class Main {
-    public static void main(String[] args) {
-        //teachers
-        FullTimeTeacher fullTeacher1, fullTeacher2;
-        PartTimeTeacher partTeacher1, partTeacher2;
-        ArrayList<Teacher> initialTeachers = new ArrayList<>(Arrays.asList(
-                fullTeacher1 = new FullTimeTeacher("Felipe Suarez", 2.2, 48.2, 2000.2),
-                fullTeacher2 = new FullTimeTeacher("Andres Lopez", 5.2, 40.3, 3000.6),
-                partTeacher1 = new PartTimeTeacher("Mario Hernandez", 9.2, 30.3, 5000.6),
-                partTeacher2 = new PartTimeTeacher("Julio Rodriguez", 2.2, 46.3, 1000.39)
-        ));
+    public UniversityUI(University university) {
+        this.university = university;
+        scanner = new Scanner(System.in);
+    }
 
-        //students
-        Student student1, student2, student3, student4, student5, student6;
-        ArrayList<Student> group1 = new ArrayList<>(Arrays.asList(
-                student1 = new Student("Omar Perez", 18),
-                student2 = new Student("Laura Martinez", 20),
-                student3 = new Student("Carlos Gonzalez", 22)
-        ));
-        ArrayList<Student> group2 = new ArrayList<>(Arrays.asList(
-                student4 = new Student("Ana Ramirez", 19),
-                student5 = new Student("David Lopez", 21),
-                student6 = new Student("Maria Fernandez", 23)
-        ));
-        ArrayList<Student> mergedGroups = new ArrayList<>();
-        mergedGroups.addAll(group1);
-        mergedGroups.addAll(group2);
-
-        //classes
-        CollegeClass class1, class2, class3, class4;
-        ArrayList<CollegeClass> initialClasses = new ArrayList<>(Arrays.asList(
-            class1 = new CollegeClass("Chemistry", "201", fullTeacher1, group1),
-            class2 = new CollegeClass("Math", "302-B", partTeacher1, group2),
-            class3 = new CollegeClass("Physics", "402-A", fullTeacher2, new ArrayList<>(group1)),
-            class4 = new CollegeClass("Geography", "402-A", partTeacher2, new ArrayList<>(group2))
-        ));
-        //university
-        University university = new University(initialTeachers, mergedGroups, initialClasses);
-
-        //main menu
-        Scanner scanner = new Scanner(System.in);
+    public void start() {
         String selectedOption = "";
-
-        while(!selectedOption.equals("E")){
+        //here we print the main menu until the exit flag "E" is inputed
+        while (!selectedOption.equals("E")) {
             System.out.println("------------------------------------");
             System.out.println("Please select an option or enter \"E\" to exit");
             System.out.println("Enter \"1\" - Print all professors");
@@ -120,7 +90,7 @@ public class Main {
                         university.addClass(newClass);
                         System.out.println("Class added successfully!");
                     }else{
-                        System.out.println("Couldn't create class. Please verify that the teacher ID exists or that any of the given student IDs exists");
+                        System.out.println("Couldnt create class. Please verify that the teacher ID exists or that any of the given student IDs exists");
                     }
                     break;
                 case "6":
