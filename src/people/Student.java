@@ -10,7 +10,7 @@ public class Student extends Person {
     public Student(String name, int age) {
         this.age = age;
         setName(name);
-        setId(Utils.rand.nextInt());
+        setId(Utils.rand.nextInt(1000));
     }
 
 
@@ -22,7 +22,7 @@ public class Student extends Person {
         this.age = age;
     }
 
-    public String getStudentDetails(){
-        return "ID:" + getId() + "\nName:" +  "\nAge:" + getAge();
+    public void printStudentDetails(){
+        System.out.println("ID: " + getId() + "\nName: " + getName() + "\nAge: " + getAge() + "\n");
     }
 }

@@ -3,9 +3,10 @@ package people;
 public class PartTimeTeacher extends Teacher {
     private double baseSalary;
 
-    public PartTimeTeacher(String name, int yearsOfExperience, int weeklyHours, double baseSalary) {
+    public PartTimeTeacher(String name, double yearsOfExperience, double weeklyHours, double baseSalary) {
         super(name, yearsOfExperience, weeklyHours);
         this.baseSalary = baseSalary;
+        calculateSalary();
     }
 
     public double getBaseSalary() {

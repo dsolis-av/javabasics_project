@@ -6,14 +6,14 @@ import utils.Utils;
 
 import java.util.ArrayList;
 
-public class Class {
+public class CollegeClass {
     private int id;
     private String className;
     private String classRoom;
     private ArrayList<Student> students;
     private Teacher teacher;
 
-    public Class(String className, String classRoom, Teacher teacher, ArrayList<Student> students) {
+    public CollegeClass(String className, String classRoom, Teacher teacher, ArrayList<Student> students) {
         this.className = className;
         this.classRoom = classRoom;
         this.teacher = teacher;
@@ -64,4 +64,22 @@ public class Class {
     public void addStudent(Student student){
         this.students.add(student);
     }
+
+    public void printClassPartialDetails() {
+        System.out.println("ID: " + getId() + "\nClassname: " + getClassName() + "\nClassroom: " + getClassRoom() + "\nTeacher: " + this.teacher.getName());
+        System.out.println("Student names:");
+        for(int i = 0; i < this.students.size(); i++){
+            System.out.println(this.students.get(i).getName());
+        }
+        System.out.println("\n");
+    }
+
+    public void printClassDetails(){
+        System.out.println("ID: " + getId() + "\nClassname: " + getClassName() + "\nClassroom: " + getClassRoom() + "\nTeacher: " + this.teacher.getName());
+        for(int i = 0; i < this.students.size(); i++){
+            System.out.println("Students:");
+            this.students.get(i).printStudentDetails();
+        }
+    }
+
 }

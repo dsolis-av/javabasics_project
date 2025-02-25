@@ -4,12 +4,12 @@ import utils.Utils;
 
 public abstract class Teacher extends Person {
     private double salary;
-    private int yearsOfExperience;
-    private int weeklyHours;
+    private double yearsOfExperience;
+    private double weeklyHours;
 
-    public Teacher(String name, int yearsOfExperience, int weeklyHours) {
+    public Teacher(String name, double yearsOfExperience, double weeklyHours) {
         setName(name);
-        setId(Utils.rand.nextInt());
+        setId(Utils.rand.nextInt(1000));
         this.yearsOfExperience = yearsOfExperience;
         this.weeklyHours = weeklyHours;
     }
@@ -23,20 +23,24 @@ public abstract class Teacher extends Person {
         this.salary = salary;
     }
 
-    public int getYearsOfExperience() {
+    public double getYearsOfExperience() {
         return yearsOfExperience;
     }
 
-    public void setYearsOfExperience(int yearsOfExperience) {
+    public void setYearsOfExperience(double yearsOfExperience) {
         this.yearsOfExperience = yearsOfExperience;
     }
 
-    public int getWeeklyHours() {
+    public double getWeeklyHours() {
         return weeklyHours;
     }
 
-    public void setWeeklyHours(int weeklyHours) {
+    public void setWeeklyHours(double weeklyHours) {
         this.weeklyHours = weeklyHours;
+    }
+
+    public void printTeacherDetails(){
+        System.out.println("ID: " + getId() + "\nName: " + getName() + "\nSalary: " + getSalary() + "\nYears of Experience: " + getYearsOfExperience() + "\nWeekly hours: " + getWeeklyHours() + "\n");
     }
 
     public abstract void calculateSalary();
